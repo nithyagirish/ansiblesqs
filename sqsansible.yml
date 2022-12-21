@@ -25,6 +25,6 @@
                  - SQS:SendMessage
            Resource: arn:aws:sqs:882956824445:Mysnsqueue
          redrive_policy: 
-         maxReceiveCount: mrc
+         maxReceiveCount: mrc1
          deadLetterTargetArn: arn:aws:iam::aws:policy/AmazonSQSFullAccess
      register: SQS 
