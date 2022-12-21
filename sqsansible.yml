@@ -7,12 +7,12 @@
      -name: task #1 Create Queue
      SQS_queue:
          name: "SQSQueue"
-         region: ap-southeast-2
-         default_visibility_timeout: 120
-         message_retention_period: 86400
-         maximum_message_size: 1024
-         delivery_delay: 30
-         receive_message_wait_time: 20
+         region: region1
+         default_visibility_timeout: dvt
+         message_retention_period: mrp
+         maximum_message_size: mms
+         delivery_delay: dd
+         receive_message_wait_time: rmwt
          policy:
            Version: 2012-10-17
            Id: sqs-queue-policy
@@ -25,6 +25,6 @@
                  - SQS:SendMessage
            Resource: arn:aws:sqs:882956824445:Mysnsqueue
          redrive_policy: 
-         maxReceiveCount: 5
+         maxReceiveCount: mrc
          deadLetterTargetArn: arn:aws:iam::aws:policy/AmazonSQSFullAccess
      register: SQS 
